@@ -28,26 +28,28 @@ contact_us[1].send_keys(Keys.ENTER)
 # After call new window, Python has to focus on new tab
 # first tab is window_handles[0] / Second tab is window_handles[-1] ....
 driver.switch_to.window(driver.window_handles[-2])
-time.sleep(3)
 
+time.sleep(3)
 firstname = driver.find_element(By.NAME, 'general-firstname')
 firstname.send_keys("firstname")
-time.sleep(2)
 
+time.sleep(2)
 lastname = driver.find_element(By.NAME, 'general-lastname')
 lastname.send_keys("lastname")
+
 time.sleep(2)
+country = driver.find_element(By.NAME, 'general-citizenship')
+country.send_keys("can")
 
+time.sleep(2)
+g_email = driver.find_element(By.NAME, 'general-email')
+g_email.send_keys("jake@gmail.com")
 
+time.sleep(2)
+inquiry = driver.find_element(By.NAME,'general-inquiry')
+inquiry.send_keys("This is test inquiry")
 
-
-
-
-
-
-# time.sleep(5)
-# link = driver.find_element_by_link_text("Camps")
-# link.click()
+time.sleep(10)
 
 
 # try:
