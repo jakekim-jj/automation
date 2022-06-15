@@ -31,10 +31,28 @@ driver.switch_to.window(driver.window_handles[-2])
 
 time.sleep(3)
 firstname = driver.find_element(By.NAME, 'general-firstname')
+
+
+enableStatus = firstname.is_enabled()
+# Check is it enabla or not
+displayStatus = firstname.is_displayed()
+# Check is it displayed or not
+print(enableStatus)
+print(displayStatus)
+
+
 firstname.send_keys("firstname")
 
 time.sleep(2)
 lastname = driver.find_element(By.NAME, 'general-lastname')
+
+attrData = lastname.get_attribute("type")
+#Get attribute of lastname
+fontValue = lastname.value_of_css_property("font-size")
+#get css property of lastname
+print(attrData)
+print(fontValue)
+
 lastname.send_keys("lastname")
 
 time.sleep(2)
@@ -49,17 +67,5 @@ time.sleep(2)
 inquiry = driver.find_element(By.NAME,'general-inquiry')
 inquiry.send_keys("This is test inquiry")
 
-time.sleep(10)
-
-
-# try:
-#     element = WebDriverWait(driver, 10).until(
-#         EC.presence_of_element((By.CLASS_NAME, "edgt-btn-text"))
-#     )
-#     element.click()
-#     # element = WebDriverWait(driver, 10).until(
-#     #     EC.presence_of_element_located((By.NAME, "careersfull-firstname"))
-#     # )
-#     # element.click()
-# finally:
-#     driver.quit()
+time.sleep(5)
+driver.quit()
